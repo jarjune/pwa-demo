@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	if('serviceWorker' in navigator) {
+		log('支持sw');
+
+		navigator.serviceWorker.register('./sw/sw.js', {
+			scope: './'
+		}).then(function(registration) {
+			log('注册成功');
+
+			var sw;
+			if (registration.installing) {
+				sw = registration.installing;
+			} else if (registration.waiting) {
+				sw = registration.waiting;
+			} else if (registration.active) {
+				sw = registration.active;
+			}
+			log(sw)
+		}).catch(function(e) {
+			log(e)
+		})
+	}
+
+	function log(logInfo) {
+		console.log(logInfo);
+	}
+</script>
+</html>
