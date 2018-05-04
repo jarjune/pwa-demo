@@ -12,7 +12,7 @@
 		log('支持sw');
 
 		navigator.serviceWorker.register('./sw/sw.js', {
-			scope: './sw'
+			scope: './sw/'
 		}).then(function(registration) {
 			log('注册成功');
 
