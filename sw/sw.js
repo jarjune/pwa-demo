@@ -1,8 +1,7 @@
 var version = 'jarjune_v2018_05_04';
 
 var list = [
-	'/',
-	'index.html'
+	'/'
 ];
 
 self.addEventListener('install', function(e) {
